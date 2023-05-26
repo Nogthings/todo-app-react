@@ -148,13 +148,13 @@ export default function TaskMenu({ task }) {
   }
 
   return (
-    <div className="border border-gray-400 dark:border-gray-100 shadow-lg rounded-lg p-2">
+    <div className={`${priority === 1 ? "border-green-500 " : priority === 2 ? "border-orange-500 " : "border-red-500 " } border-2 shadow-lg rounded-lg p-2`}>
       <p className="w-full text-grey-darkest p-2 mb-2">{title}</p>
       <p className="w-full text-grey-darkest text-xs px-2  mb-1">
         Start: {start_date}
       </p>
       <p className="w-full text-grey-darkest text-xs px-2 mb-4">
-        Priority: {priority}
+        Priority: {priority === 1 ? "Low" : priority === 2 ? "Medium" : "High" }
       </p>
       <div className="flex mb-4 items-center">
         {
